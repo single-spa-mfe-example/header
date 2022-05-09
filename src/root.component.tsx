@@ -1,15 +1,18 @@
+import { useReducer } from "react";
 import { Navbar } from "react-bulma-components";
 import { BrowserRouter, Link } from "react-router-dom";
 
 export default function Root(props) {
+  const [showMenu, toggle] = useReducer((last) => !last, false);
+  const root = props.basenames?.root ?? "/";
   return (
-    <BrowserRouter>
-      <Navbar color="black">
+    <BrowserRouter basename={root}>
+      <Navbar color="primary" active={showMenu}>
         <Navbar.Brand>
-          <Navbar.Item renderAs={Link} to="">
+          <Navbar.Item renderAs={Link} to={root}>
             Example App
           </Navbar.Item>
-          <Navbar.Burger />
+          <Navbar.Burger onClick={toggle} />
         </Navbar.Brand>
         <Navbar.Menu>
           <Navbar.Container>
