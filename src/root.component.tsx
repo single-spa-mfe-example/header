@@ -9,7 +9,7 @@ export default function Root(props) {
     <BrowserRouter basename={root}>
       <Navbar color="primary" active={showMenu}>
         <Navbar.Brand>
-          <Navbar.Item renderAs={Link} to={root}>
+          <Navbar.Item renderAs={Link} to="/">
             Example App
           </Navbar.Item>
           <Navbar.Burger onClick={toggle} />
