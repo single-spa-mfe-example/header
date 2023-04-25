@@ -14,7 +14,7 @@ export default function Root(props) {
           </Navbar.Item>
           <Navbar.Burger onClick={toggle} />
         </Navbar.Brand>
-        <Navbar.Menu>
+        <Navbar.Menu onClick={toggle}>
           <Navbar.Container>
             <Navbar.Link arrowless renderAs={Link} to="/">
               Home
